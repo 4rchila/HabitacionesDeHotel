@@ -15,7 +15,7 @@ namespace servicioHotelero
             NumeroDeHabitaciones = numeroDeHabitaciones;
             TieneJacuzzi = tieneJacuzzi;
         }
-        public void InfoExtraSuite()
+        public override void MostrarInformacion()
         {
             base.MostrarInformacion();
             Console.WriteLine($"El numero de habitaciones es: {NumeroDeHabitaciones}");

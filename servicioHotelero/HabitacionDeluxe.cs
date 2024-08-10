@@ -13,7 +13,7 @@ namespace servicioHotelero
         {
             this.ServicioExtra = servicioExtra;
         }
-        public void InfoExtraDelux() 
+        public override void MostrarInformacion() 
         {
             base.MostrarInformacion();
             Console.WriteLine($"La habitacion cuenta con el servicio extra: {ServicioExtra}");

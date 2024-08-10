@@ -13,7 +13,7 @@ namespace servicioHotelero
         {
             this.VistaAlMar = vistaAlMar;
         }
-        public void InfoExtra(bool visalmar) 
+        public override void MostrarInformacion() 
         {
             base.MostrarInformacion();
             Console.WriteLine($"La habitacion cuenta con vista al mar{VistaAlMar}");

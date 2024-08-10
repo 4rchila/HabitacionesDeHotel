@@ -21,7 +21,7 @@ namespace servicioHotelero
             this.ClienteAsignado = nombreCliente;
         }
 
-        public void MostrarInformacion() 
+        public virtual void MostrarInformacion() 
         {
             Console.WriteLine("Informacion de la habitacion:\n");
             Console.WriteLine($"El numero de la habitacion es: {NumeroHabitacion}");
@@ -29,16 +29,16 @@ namespace servicioHotelero
             if (Disponible == true)
             {
                 Console.WriteLine($"La habitacion  se encuentra disponible");
+
             }
             else 
             {
                 Console.WriteLine($"La habitacion NO se encuentra disponible");
+                Console.WriteLine($"El cliente que ocupa la habitacion es: {ClienteAsignado}");
             }
-            Console.WriteLine($"El numero de la habitacion es: {ClienteAsignado}");
-            Console.WriteLine($"El numero de la habitacion es: {NumeroHabitacion}");
         }
 
-        public bool CambiarDisponibilidad(List<Habitacion> list) 
+        public virtual bool CambiarDisponibilidad(List<Habitacion> list) 
         {
           Console.WriteLine("Escribe el numero de la habitacion a la cual deseas cambiarle la disponibilidad");
             int habitacionBuscar = int.Parse(Console.ReadLine());
@@ -56,7 +56,7 @@ namespace servicioHotelero
             }
             return listaBuscar.Disponible;
         }
-        public string AsignarCliente(string nombreCliente, List<Habitacion> list) 
+        public virtual string AsignarCliente(string nombreCliente, List<Habitacion> list) 
         {
           Console.WriteLine("Escribe el numero de la habitacion que deseas reservar");
             int buscarHabitacion = int.Parse(Console.ReadLine());
@@ -67,6 +67,7 @@ namespace servicioHotelero
                 if (listaBuscar.Disponible == true)
                 {
                     listaBuscar.ClienteAsignado = nombreCliente;
+                    listaBuscar.Disponible = false;
                 }
                 else 
                 {

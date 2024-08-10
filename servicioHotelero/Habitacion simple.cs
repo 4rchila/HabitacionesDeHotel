@@ -14,7 +14,7 @@ namespace servicioHotelero
             this.NumeroDeCamas = numeroDeCamas;
         }
 
-        public void InformacionExtra() 
+        public override void MostrarInformacion() 
         {
             base.MostrarInformacion();
             Console.WriteLine($"El numero de camas de la habitacion simple es de {NumeroDeCamas}");
